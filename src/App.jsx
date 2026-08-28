@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GadgetForm from "./components/GadgetForm";
 import GadgetTable from "./components/GadgetTable";
+import GadgetDetail from "./components/GadgetDetail";
 
 export default function App() {
   const [gadgets, setGadgets] = useState([]);
@@ -19,7 +20,7 @@ export default function App() {
             Tech Gadget & Inventory Hub
           </h1>
           <p className="text-slate-500 text-sm mt-1">
-            Manage and filter gadget hardware inventory
+            Manage, filter, and inspect gadget hardware inventory
           </p>
         </header>
 
@@ -32,6 +33,8 @@ export default function App() {
           roleFilter={roleFilter}
           setRoleFilter={setRoleFilter}
         />
+
+        <GadgetDetail selectedItem={selectedItem} />
       </div>
     </div>
   );
